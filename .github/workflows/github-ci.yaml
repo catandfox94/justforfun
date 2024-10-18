@@ -1,0 +1,19 @@
+name: build on main
+
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: self
+    steps:
+      - name: test java version
+        run: java -version
+      
+      - name: test maven version
+        run: mvn --version
+      
+      - name: execute test 
+        run: mvn test
+
